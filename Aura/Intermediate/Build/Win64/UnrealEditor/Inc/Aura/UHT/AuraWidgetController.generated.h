@@ -27,6 +27,7 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FWidgetControllerParams>(
 #define FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_40_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_40_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execBroadcastInitialValues); \
 	DECLARE_FUNCTION(execSetWidgetControllerParams);
 
 
