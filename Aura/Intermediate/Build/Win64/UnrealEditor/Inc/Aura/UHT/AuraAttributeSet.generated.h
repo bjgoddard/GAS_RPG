@@ -28,6 +28,10 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FEffectProperties>();
 #define FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_AuraAttributeSet_h_58_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_AuraAttributeSet_h_58_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnRep_PhysicalResistance); \
+	DECLARE_FUNCTION(execOnRep_ArcaneResistance); \
+	DECLARE_FUNCTION(execOnRep_LightningResistance); \
+	DECLARE_FUNCTION(execOnRep_FireResistance); \
 	DECLARE_FUNCTION(execOnRep_MaxMana); \
 	DECLARE_FUNCTION(execOnRep_MaxHealth); \
 	DECLARE_FUNCTION(execOnRep_ManaRegen); \
@@ -63,17 +67,21 @@ public: \
 		Vigor, \
 		Health, \
 		Mana, \
+		MaxMana, \
+		MaxHealth, \
+		HealthRegen, \
+		ManaRegen, \
 		Armor, \
 		ArmorPen, \
 		BlockChance, \
 		CritChance, \
 		CritDamage, \
 		CritResist, \
-		HealthRegen, \
-		ManaRegen, \
-		MaxMana, \
-		MaxHealth, \
-		NETFIELD_REP_END=MaxHealth	}; \
+		FireResistance, \
+		LightningResistance, \
+		ArcaneResistance, \
+		PhysicalResistance, \
+		NETFIELD_REP_END=PhysicalResistance	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override; \
 private: \
 	REPLICATED_BASE_CLASS(UAuraAttributeSet) \

@@ -28,7 +28,7 @@ private: \
 	static void StaticRegisterNativesUAuraProjectileSpell(); \
 	friend struct Z_Construct_UClass_UAuraProjectileSpell_Statics; \
 public: \
-	DECLARE_CLASS(UAuraProjectileSpell, UAuraGameplayAbility, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/Aura"), NO_API) \
+	DECLARE_CLASS(UAuraProjectileSpell, UAuraDamageGameplayAbility, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/Aura"), NO_API) \
 	DECLARE_SERIALIZER(UAuraProjectileSpell)
 
 
