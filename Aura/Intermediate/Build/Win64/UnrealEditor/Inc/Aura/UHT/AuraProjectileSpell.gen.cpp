@@ -163,9 +163,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraProjectileSpell() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraProjectileSpell_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UAuraProjectileSpell, UAuraProjectileSpell::StaticClass, TEXT("UAuraProjectileSpell"), &Z_Registration_Info_UClass_UAuraProjectileSpell, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraProjectileSpell), 404764761U) },
+		{ Z_Construct_UClass_UAuraProjectileSpell, UAuraProjectileSpell::StaticClass, TEXT("UAuraProjectileSpell"), &Z_Registration_Info_UClass_UAuraProjectileSpell, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraProjectileSpell), 3475902184U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraProjectileSpell_h_2428388422(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraProjectileSpell_h_2444207269(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraProjectileSpell_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraProjectileSpell_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

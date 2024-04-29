@@ -9,6 +9,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 class UAbilitySystemComponent;
 class UAttributeMenuWidgetController;
 class UCharacterClassInfo;
@@ -26,6 +27,8 @@ struct FGameplayEffectContextHandle;
 #define FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_AuraAbilitySystemLibrary_h_19_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_AuraAbilitySystemLibrary_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execIsNotFriendly); \
+	DECLARE_FUNCTION(execGetLivePlayersWithinRadius); \
 	DECLARE_FUNCTION(execSetIsCriticalHit); \
 	DECLARE_FUNCTION(execSetIsBlockedHit); \
 	DECLARE_FUNCTION(execIsCriticalHit); \

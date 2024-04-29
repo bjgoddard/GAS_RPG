@@ -6,6 +6,7 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Aura/Public/AbilitySystem/Abilities/AuraDamageGameplayAbility.h"
+#include "Aura/Public/Interaction/CombatInterface.h"
 #include "GameplayTagContainer.h"
 #include "ScalableFloat.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
@@ -14,14 +15,121 @@ void EmptyLinkFunctionForGeneratedCodeAuraDamageGameplayAbility() {}
 	AURA_API UClass* Z_Construct_UClass_UAuraDamageGameplayAbility();
 	AURA_API UClass* Z_Construct_UClass_UAuraDamageGameplayAbility_NoRegister();
 	AURA_API UClass* Z_Construct_UClass_UAuraGameplayAbility();
+	AURA_API UScriptStruct* Z_Construct_UScriptStruct_FTaggedMontage();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UGameplayEffect_NoRegister();
 	GAMEPLAYABILITIES_API UScriptStruct* Z_Construct_UScriptStruct_FScalableFloat();
 	GAMEPLAYTAGS_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayTag();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
+	DEFINE_FUNCTION(UAuraDamageGameplayAbility::execGetRandomTaggedMontageFromArray)
+	{
+		P_GET_TARRAY_REF(FTaggedMontage,Z_Param_Out_TaggedMontages);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FTaggedMontage*)Z_Param__Result=P_THIS->GetRandomTaggedMontageFromArray(Z_Param_Out_TaggedMontages);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UAuraDamageGameplayAbility::execCauseDamage)
+	{
+		P_GET_OBJECT(AActor,Z_Param_TargetActor);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->CauseDamage(Z_Param_TargetActor);
+		P_NATIVE_END;
+	}
 	void UAuraDamageGameplayAbility::StaticRegisterNativesUAuraDamageGameplayAbility()
 	{
+		UClass* Class = UAuraDamageGameplayAbility::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "CauseDamage", &UAuraDamageGameplayAbility::execCauseDamage },
+			{ "GetRandomTaggedMontageFromArray", &UAuraDamageGameplayAbility::execGetRandomTaggedMontageFromArray },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics
+	{
+		struct AuraDamageGameplayAbility_eventCauseDamage_Parms
+		{
+			AActor* TargetActor;
+		};
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_TargetActor;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::NewProp_TargetActor = { "TargetActor", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraDamageGameplayAbility_eventCauseDamage_Parms, TargetActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::NewProp_TargetActor,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/Abilities/AuraDamageGameplayAbility.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UAuraDamageGameplayAbility, nullptr, "CauseDamage", nullptr, nullptr, Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::PropPointers), sizeof(Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::AuraDamageGameplayAbility_eventCauseDamage_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::Function_MetaDataParams), Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::AuraDamageGameplayAbility_eventCauseDamage_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics
+	{
+		struct AuraDamageGameplayAbility_eventGetRandomTaggedMontageFromArray_Parms
+		{
+			TArray<FTaggedMontage> TaggedMontages;
+			FTaggedMontage ReturnValue;
+		};
+		static const UECodeGen_Private::FStructPropertyParams NewProp_TaggedMontages_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_TaggedMontages_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_TaggedMontages;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::NewProp_TaggedMontages_Inner = { "TaggedMontages", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FTaggedMontage, METADATA_PARAMS(0, nullptr) }; // 3362767820
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::NewProp_TaggedMontages_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::NewProp_TaggedMontages = { "TaggedMontages", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraDamageGameplayAbility_eventGetRandomTaggedMontageFromArray_Parms, TaggedMontages), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::NewProp_TaggedMontages_MetaData), Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::NewProp_TaggedMontages_MetaData) }; // 3362767820
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraDamageGameplayAbility_eventGetRandomTaggedMontageFromArray_Parms, ReturnValue), Z_Construct_UScriptStruct_FTaggedMontage, METADATA_PARAMS(0, nullptr) }; // 3362767820
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::NewProp_TaggedMontages_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::NewProp_TaggedMontages,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/Abilities/AuraDamageGameplayAbility.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UAuraDamageGameplayAbility, nullptr, "GetRandomTaggedMontageFromArray", nullptr, nullptr, Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::PropPointers), sizeof(Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::AuraDamageGameplayAbility_eventGetRandomTaggedMontageFromArray_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54480401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::Function_MetaDataParams), Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::AuraDamageGameplayAbility_eventGetRandomTaggedMontageFromArray_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UAuraDamageGameplayAbility);
 	UClass* Z_Construct_UClass_UAuraDamageGameplayAbility_NoRegister()
@@ -31,6 +139,7 @@ void EmptyLinkFunctionForGeneratedCodeAuraDamageGameplayAbility() {}
 	struct Z_Construct_UClass_UAuraDamageGameplayAbility_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -53,6 +162,11 @@ void EmptyLinkFunctionForGeneratedCodeAuraDamageGameplayAbility() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Aura,
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraDamageGameplayAbility_Statics::DependentSingletons) < 16);
+	const FClassFunctionLinkInfo Z_Construct_UClass_UAuraDamageGameplayAbility_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UAuraDamageGameplayAbility_CauseDamage, "CauseDamage" }, // 2565044367
+		{ &Z_Construct_UFunction_UAuraDamageGameplayAbility_GetRandomTaggedMontageFromArray, "GetRandomTaggedMontageFromArray" }, // 1415414279
+	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraDamageGameplayAbility_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAuraDamageGameplayAbility_Statics::Class_MetaDataParams[] = {
 #if !UE_BUILD_SHIPPING
@@ -92,11 +206,11 @@ void EmptyLinkFunctionForGeneratedCodeAuraDamageGameplayAbility() {}
 		nullptr,
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_UAuraDamageGameplayAbility_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_UAuraDamageGameplayAbility_Statics::PropPointers),
 		0,
 		0x001000A0u,
@@ -123,9 +237,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraDamageGameplayAbility() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraDamageGameplayAbility_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UAuraDamageGameplayAbility, UAuraDamageGameplayAbility::StaticClass, TEXT("UAuraDamageGameplayAbility"), &Z_Registration_Info_UClass_UAuraDamageGameplayAbility, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraDamageGameplayAbility), 1370320335U) },
+		{ Z_Construct_UClass_UAuraDamageGameplayAbility, UAuraDamageGameplayAbility::StaticClass, TEXT("UAuraDamageGameplayAbility"), &Z_Registration_Info_UClass_UAuraDamageGameplayAbility, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraDamageGameplayAbility), 587016258U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraDamageGameplayAbility_h_1595799603(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraDamageGameplayAbility_h_167712261(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraDamageGameplayAbility_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Abilities_AuraDamageGameplayAbility_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
