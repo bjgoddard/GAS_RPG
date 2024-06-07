@@ -20,11 +20,13 @@ void EmptyLinkFunctionForGeneratedCodeAuraCharacterBase() {}
 	ENGINE_API UClass* Z_Construct_UClass_UMaterialInstance_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UMaterialInstanceDynamic_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAbilitySystemComponent_NoRegister();
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAbilitySystemInterface_NoRegister();
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAttributeSet_NoRegister();
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UGameplayAbility_NoRegister();
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UGameplayEffect_NoRegister();
+	NIAGARA_API UClass* Z_Construct_UClass_UNiagaraSystem_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
 	DEFINE_FUNCTION(AAuraCharacterBase::execMulticastHandleDeath)
@@ -191,6 +193,10 @@ void EmptyLinkFunctionForGeneratedCodeAuraCharacterBase() {}
 #endif
 		static const UECodeGen_Private::FNamePropertyParams NewProp_RightHandSocketName;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_TailSocketName_MetaData[];
+#endif
+		static const UECodeGen_Private::FNamePropertyParams NewProp_TailSocketName;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_AbilitySystemComponent_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_AbilitySystemComponent;
@@ -218,6 +224,14 @@ void EmptyLinkFunctionForGeneratedCodeAuraCharacterBase() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_WeaponDissolveMaterialInstance_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_WeaponDissolveMaterialInstance;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BloodEffect_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_BloodEffect;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DeathSound_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_DeathSound;
 		static const UECodeGen_Private::FClassPropertyParams NewProp_StartupAbilities_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_StartupAbilities_MetaData[];
@@ -250,14 +264,14 @@ void EmptyLinkFunctionForGeneratedCodeAuraCharacterBase() {}
 		{ "ModuleRelativePath", "Public/Character/AuraCharacterBase.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_AttackMontages_Inner = { "AttackMontages", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FTaggedMontage, METADATA_PARAMS(0, nullptr) }; // 3362767820
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_AttackMontages_Inner = { "AttackMontages", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FTaggedMontage, METADATA_PARAMS(0, nullptr) }; // 590290476
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_AttackMontages_MetaData[] = {
 		{ "Category", "Combat" },
 		{ "ModuleRelativePath", "Public/Character/AuraCharacterBase.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_AttackMontages = { "AttackMontages", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraCharacterBase, AttackMontages), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_AttackMontages_MetaData), Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_AttackMontages_MetaData) }; // 3362767820
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_AttackMontages = { "AttackMontages", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraCharacterBase, AttackMontages), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_AttackMontages_MetaData), Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_AttackMontages_MetaData) }; // 590290476
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_Weapon_MetaData[] = {
 		{ "Category", "Combat" },
@@ -287,6 +301,13 @@ void EmptyLinkFunctionForGeneratedCodeAuraCharacterBase() {}
 	};
 #endif
 	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_RightHandSocketName = { "RightHandSocketName", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraCharacterBase, RightHandSocketName), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_RightHandSocketName_MetaData), Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_RightHandSocketName_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_TailSocketName_MetaData[] = {
+		{ "Category", "Combat" },
+		{ "ModuleRelativePath", "Public/Character/AuraCharacterBase.h" },
+	};
+#endif
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_TailSocketName = { "TailSocketName", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraCharacterBase, TailSocketName), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_TailSocketName_MetaData), Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_TailSocketName_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_AbilitySystemComponent_MetaData[] = {
 		{ "EditInline", "true" },
@@ -336,6 +357,20 @@ void EmptyLinkFunctionForGeneratedCodeAuraCharacterBase() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_WeaponDissolveMaterialInstance = { "WeaponDissolveMaterialInstance", nullptr, (EPropertyFlags)0x0024080000000015, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraCharacterBase, WeaponDissolveMaterialInstance), Z_Construct_UClass_UMaterialInstance_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_WeaponDissolveMaterialInstance_MetaData), Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_WeaponDissolveMaterialInstance_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_BloodEffect_MetaData[] = {
+		{ "Category", "Combat" },
+		{ "ModuleRelativePath", "Public/Character/AuraCharacterBase.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_BloodEffect = { "BloodEffect", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraCharacterBase, BloodEffect), Z_Construct_UClass_UNiagaraSystem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_BloodEffect_MetaData), Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_BloodEffect_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_DeathSound_MetaData[] = {
+		{ "Category", "Combat" },
+		{ "ModuleRelativePath", "Public/Character/AuraCharacterBase.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_DeathSound = { "DeathSound", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraCharacterBase, DeathSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_DeathSound_MetaData), Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_DeathSound_MetaData) };
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_StartupAbilities_Inner = { "StartupAbilities", nullptr, (EPropertyFlags)0x0004000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UClass, Z_Construct_UClass_UGameplayAbility_NoRegister, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_StartupAbilities_MetaData[] = {
@@ -358,6 +393,7 @@ void EmptyLinkFunctionForGeneratedCodeAuraCharacterBase() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_WeaponTipSocketName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_LeftHandSocketName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_RightHandSocketName,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_TailSocketName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_AbilitySystemComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_AttributeSet,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_DefaultPrimaryAttributes,
@@ -365,13 +401,15 @@ void EmptyLinkFunctionForGeneratedCodeAuraCharacterBase() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_DefaultVitalAttributes,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_DissolveMaterialInstance,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_WeaponDissolveMaterialInstance,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_BloodEffect,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_DeathSound,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_StartupAbilities_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_StartupAbilities,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraCharacterBase_Statics::NewProp_HitReactMontage,
 	};
 		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AAuraCharacterBase_Statics::InterfaceParams[] = {
 			{ Z_Construct_UClass_UAbilitySystemInterface_NoRegister, (int32)VTABLE_OFFSET(AAuraCharacterBase, IAbilitySystemInterface), false },  // 3195502011
-			{ Z_Construct_UClass_UCombatInterface_NoRegister, (int32)VTABLE_OFFSET(AAuraCharacterBase, ICombatInterface), false },  // 3339163527
+			{ Z_Construct_UClass_UCombatInterface_NoRegister, (int32)VTABLE_OFFSET(AAuraCharacterBase, ICombatInterface), false },  // 3201701725
 		};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraCharacterBase_Statics::InterfaceParams) < 64);
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AAuraCharacterBase_Statics::StaticCppClassTypeInfo = {
@@ -412,9 +450,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraCharacterBase() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Character_AuraCharacterBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAuraCharacterBase, AAuraCharacterBase::StaticClass, TEXT("AAuraCharacterBase"), &Z_Registration_Info_UClass_AAuraCharacterBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAuraCharacterBase), 3800035789U) },
+		{ Z_Construct_UClass_AAuraCharacterBase, AAuraCharacterBase::StaticClass, TEXT("AAuraCharacterBase"), &Z_Registration_Info_UClass_AAuraCharacterBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAuraCharacterBase), 1958902485U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Character_AuraCharacterBase_h_3743331523(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Character_AuraCharacterBase_h_515227105(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Character_AuraCharacterBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Character_AuraCharacterBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

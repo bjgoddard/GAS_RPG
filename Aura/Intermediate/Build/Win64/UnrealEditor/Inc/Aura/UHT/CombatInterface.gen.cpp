@@ -17,7 +17,9 @@ void EmptyLinkFunctionForGeneratedCodeCombatInterface() {}
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	GAMEPLAYTAGS_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayTag();
+	NIAGARA_API UClass* Z_Construct_UClass_UNiagaraSystem_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
 	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_TaggedMontage;
@@ -47,6 +49,14 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MontageTag_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_MontageTag;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SocketTag_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_SocketTag;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ImpactSound_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ImpactSound;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UECodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -74,9 +84,25 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_MontageTag = { "MontageTag", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FTaggedMontage, MontageTag), Z_Construct_UScriptStruct_FGameplayTag, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_MontageTag_MetaData), Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_MontageTag_MetaData) }; // 2083603574
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_SocketTag_MetaData[] = {
+		{ "Category", "TaggedMontage" },
+		{ "ModuleRelativePath", "Public/Interaction/CombatInterface.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_SocketTag = { "SocketTag", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FTaggedMontage, SocketTag), Z_Construct_UScriptStruct_FGameplayTag, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_SocketTag_MetaData), Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_SocketTag_MetaData) }; // 2083603574
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_ImpactSound_MetaData[] = {
+		{ "Category", "TaggedMontage" },
+		{ "ModuleRelativePath", "Public/Interaction/CombatInterface.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_ImpactSound = { "ImpactSound", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FTaggedMontage, ImpactSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_ImpactSound_MetaData), Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_ImpactSound_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FTaggedMontage_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_Montage,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_MontageTag,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_SocketTag,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewProp_ImpactSound,
 	};
 	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FTaggedMontage_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_Aura,
@@ -99,6 +125,36 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_TaggedMontage.InnerSingleton, Z_Construct_UScriptStruct_FTaggedMontage_Statics::ReturnStructParams);
 		}
 		return Z_Registration_Info_UScriptStruct_TaggedMontage.InnerSingleton;
+	}
+	DEFINE_FUNCTION(ICombatInterface::execIncrementMinionCount)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_Amount);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->IncrementMinionCount_Implementation(Z_Param_Amount);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ICombatInterface::execGetMinionCount)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(int32*)Z_Param__Result=P_THIS->GetMinionCount_Implementation();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ICombatInterface::execGetTaggedMontageByTag)
+	{
+		P_GET_STRUCT_REF(FGameplayTag,Z_Param_Out_MontageTag);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FTaggedMontage*)Z_Param__Result=P_THIS->GetTaggedMontageByTag_Implementation(Z_Param_Out_MontageTag);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ICombatInterface::execGetBloodEffect)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(UNiagaraSystem**)Z_Param__Result=P_THIS->GetBloodEffect_Implementation();
+		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(ICombatInterface::execGetAttackMontages)
 	{
@@ -150,6 +206,16 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		{
 		}
 	};
+	struct CombatInterface_eventGetBloodEffect_Parms
+	{
+		UNiagaraSystem* ReturnValue;
+
+		/** Constructor, initializes return property only **/
+		CombatInterface_eventGetBloodEffect_Parms()
+			: ReturnValue(NULL)
+		{
+		}
+	};
 	struct CombatInterface_eventGetCombatSocketLocation_Parms
 	{
 		FGameplayTag MontageTag;
@@ -170,6 +236,25 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 			: ReturnValue(NULL)
 		{
 		}
+	};
+	struct CombatInterface_eventGetMinionCount_Parms
+	{
+		int32 ReturnValue;
+
+		/** Constructor, initializes return property only **/
+		CombatInterface_eventGetMinionCount_Parms()
+			: ReturnValue(0)
+		{
+		}
+	};
+	struct CombatInterface_eventGetTaggedMontageByTag_Parms
+	{
+		FGameplayTag MontageTag;
+		FTaggedMontage ReturnValue;
+	};
+	struct CombatInterface_eventIncrementMinionCount_Parms
+	{
+		int32 Amount;
 	};
 	struct CombatInterface_eventIsDead_Parms
 	{
@@ -197,6 +282,12 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		CombatInterface_eventGetAvatar_Parms Parms;
 		return Parms.ReturnValue;
 	}
+	UNiagaraSystem* ICombatInterface::GetBloodEffect()
+	{
+		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_GetBloodEffect instead.");
+		CombatInterface_eventGetBloodEffect_Parms Parms;
+		return Parms.ReturnValue;
+	}
 	FVector ICombatInterface::GetCombatSocketLocation(FGameplayTag const& MontageTag)
 	{
 		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_GetCombatSocketLocation instead.");
@@ -208,6 +299,22 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_GetHitReactMontage instead.");
 		CombatInterface_eventGetHitReactMontage_Parms Parms;
 		return Parms.ReturnValue;
+	}
+	int32 ICombatInterface::GetMinionCount()
+	{
+		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_GetMinionCount instead.");
+		CombatInterface_eventGetMinionCount_Parms Parms;
+		return Parms.ReturnValue;
+	}
+	FTaggedMontage ICombatInterface::GetTaggedMontageByTag(FGameplayTag const& MontageTag)
+	{
+		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_GetTaggedMontageByTag instead.");
+		CombatInterface_eventGetTaggedMontageByTag_Parms Parms;
+		return Parms.ReturnValue;
+	}
+	void ICombatInterface::IncrementMinionCount(int32 Amount)
+	{
+		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_IncrementMinionCount instead.");
 	}
 	bool ICombatInterface::IsDead() const
 	{
@@ -225,8 +332,12 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		static const FNameNativePtrPair Funcs[] = {
 			{ "GetAttackMontages", &ICombatInterface::execGetAttackMontages },
 			{ "GetAvatar", &ICombatInterface::execGetAvatar },
+			{ "GetBloodEffect", &ICombatInterface::execGetBloodEffect },
 			{ "GetCombatSocketLocation", &ICombatInterface::execGetCombatSocketLocation },
 			{ "GetHitReactMontage", &ICombatInterface::execGetHitReactMontage },
+			{ "GetMinionCount", &ICombatInterface::execGetMinionCount },
+			{ "GetTaggedMontageByTag", &ICombatInterface::execGetTaggedMontageByTag },
+			{ "IncrementMinionCount", &ICombatInterface::execIncrementMinionCount },
 			{ "IsDead", &ICombatInterface::execIsDead },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -241,8 +352,8 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCombatInterface_GetAttackMontages_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FTaggedMontage, METADATA_PARAMS(0, nullptr) }; // 3362767820
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UCombatInterface_GetAttackMontages_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CombatInterface_eventGetAttackMontages_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) }; // 3362767820
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCombatInterface_GetAttackMontages_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FTaggedMontage, METADATA_PARAMS(0, nullptr) }; // 590290476
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UCombatInterface_GetAttackMontages_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CombatInterface_eventGetAttackMontages_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) }; // 590290476
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCombatInterface_GetAttackMontages_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCombatInterface_GetAttackMontages_Statics::NewProp_ReturnValue_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCombatInterface_GetAttackMontages_Statics::NewProp_ReturnValue,
@@ -291,6 +402,36 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCombatInterface_GetAvatar_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UCombatInterface_GetBloodEffect_Statics
+	{
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UCombatInterface_GetBloodEffect_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CombatInterface_eventGetBloodEffect_Parms, ReturnValue), Z_Construct_UClass_UNiagaraSystem_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCombatInterface_GetBloodEffect_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCombatInterface_GetBloodEffect_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UCombatInterface_GetBloodEffect_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Interaction/CombatInterface.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCombatInterface_GetBloodEffect_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCombatInterface, nullptr, "GetBloodEffect", nullptr, nullptr, Z_Construct_UFunction_UCombatInterface_GetBloodEffect_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetBloodEffect_Statics::PropPointers), sizeof(CombatInterface_eventGetBloodEffect_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetBloodEffect_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCombatInterface_GetBloodEffect_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetBloodEffect_Statics::PropPointers) < 2048);
+	static_assert(sizeof(CombatInterface_eventGetBloodEffect_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UCombatInterface_GetBloodEffect()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCombatInterface_GetBloodEffect_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -362,6 +503,107 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCombatInterface_GetHitReactMontage_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics
+	{
+		static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CombatInterface_eventGetMinionCount_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Interaction/CombatInterface.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCombatInterface, nullptr, "GetMinionCount", nullptr, nullptr, Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::PropPointers), sizeof(CombatInterface_eventGetMinionCount_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::PropPointers) < 2048);
+	static_assert(sizeof(CombatInterface_eventGetMinionCount_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UCombatInterface_GetMinionCount()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCombatInterface_GetMinionCount_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MontageTag_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_MontageTag;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::NewProp_MontageTag_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::NewProp_MontageTag = { "MontageTag", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CombatInterface_eventGetTaggedMontageByTag_Parms, MontageTag), Z_Construct_UScriptStruct_FGameplayTag, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::NewProp_MontageTag_MetaData), Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::NewProp_MontageTag_MetaData) }; // 2083603574
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CombatInterface_eventGetTaggedMontageByTag_Parms, ReturnValue), Z_Construct_UScriptStruct_FTaggedMontage, METADATA_PARAMS(0, nullptr) }; // 590290476
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::NewProp_MontageTag,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Interaction/CombatInterface.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCombatInterface, nullptr, "GetTaggedMontageByTag", nullptr, nullptr, Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::PropPointers), sizeof(CombatInterface_eventGetTaggedMontageByTag_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C420C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::PropPointers) < 2048);
+	static_assert(sizeof(CombatInterface_eventGetTaggedMontageByTag_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics
+	{
+		static const UECodeGen_Private::FIntPropertyParams NewProp_Amount;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::NewProp_Amount = { "Amount", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CombatInterface_eventIncrementMinionCount_Parms, Amount), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::NewProp_Amount,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Interaction/CombatInterface.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCombatInterface, nullptr, "IncrementMinionCount", nullptr, nullptr, Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::PropPointers), sizeof(CombatInterface_eventIncrementMinionCount_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::PropPointers) < 2048);
+	static_assert(sizeof(CombatInterface_eventIncrementMinionCount_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UCombatInterface_IncrementMinionCount()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCombatInterface_IncrementMinionCount_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -459,10 +701,14 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UCombatInterface_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UCombatInterface_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UCombatInterface_GetAttackMontages, "GetAttackMontages" }, // 3278058977
+		{ &Z_Construct_UFunction_UCombatInterface_GetAttackMontages, "GetAttackMontages" }, // 4059534782
 		{ &Z_Construct_UFunction_UCombatInterface_GetAvatar, "GetAvatar" }, // 1940562101
+		{ &Z_Construct_UFunction_UCombatInterface_GetBloodEffect, "GetBloodEffect" }, // 1078667327
 		{ &Z_Construct_UFunction_UCombatInterface_GetCombatSocketLocation, "GetCombatSocketLocation" }, // 2795220162
 		{ &Z_Construct_UFunction_UCombatInterface_GetHitReactMontage, "GetHitReactMontage" }, // 161735069
+		{ &Z_Construct_UFunction_UCombatInterface_GetMinionCount, "GetMinionCount" }, // 1998373221
+		{ &Z_Construct_UFunction_UCombatInterface_GetTaggedMontageByTag, "GetTaggedMontageByTag" }, // 453462142
+		{ &Z_Construct_UFunction_UCombatInterface_IncrementMinionCount, "IncrementMinionCount" }, // 1315119870
 		{ &Z_Construct_UFunction_UCombatInterface_IsDead, "IsDead" }, // 2762831546
 		{ &Z_Construct_UFunction_UCombatInterface_UpdateFacingTarget, "UpdateFacingTarget" }, // 3589962985
 	};
@@ -540,6 +786,23 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		}
 		return Parms.ReturnValue;
 	}
+	static FName NAME_UCombatInterface_GetBloodEffect = FName(TEXT("GetBloodEffect"));
+	UNiagaraSystem* ICombatInterface::Execute_GetBloodEffect(UObject* O)
+	{
+		check(O != NULL);
+		check(O->GetClass()->ImplementsInterface(UCombatInterface::StaticClass()));
+		CombatInterface_eventGetBloodEffect_Parms Parms;
+		UFunction* const Func = O->FindFunction(NAME_UCombatInterface_GetBloodEffect);
+		if (Func)
+		{
+			O->ProcessEvent(Func, &Parms);
+		}
+		else if (auto I = (ICombatInterface*)(O->GetNativeInterfaceAddress(UCombatInterface::StaticClass())))
+		{
+			Parms.ReturnValue = I->GetBloodEffect_Implementation();
+		}
+		return Parms.ReturnValue;
+	}
 	static FName NAME_UCombatInterface_GetCombatSocketLocation = FName(TEXT("GetCombatSocketLocation"));
 	FVector ICombatInterface::Execute_GetCombatSocketLocation(UObject* O, FGameplayTag const& MontageTag)
 	{
@@ -574,6 +837,58 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 			Parms.ReturnValue = I->GetHitReactMontage_Implementation();
 		}
 		return Parms.ReturnValue;
+	}
+	static FName NAME_UCombatInterface_GetMinionCount = FName(TEXT("GetMinionCount"));
+	int32 ICombatInterface::Execute_GetMinionCount(UObject* O)
+	{
+		check(O != NULL);
+		check(O->GetClass()->ImplementsInterface(UCombatInterface::StaticClass()));
+		CombatInterface_eventGetMinionCount_Parms Parms;
+		UFunction* const Func = O->FindFunction(NAME_UCombatInterface_GetMinionCount);
+		if (Func)
+		{
+			O->ProcessEvent(Func, &Parms);
+		}
+		else if (auto I = (ICombatInterface*)(O->GetNativeInterfaceAddress(UCombatInterface::StaticClass())))
+		{
+			Parms.ReturnValue = I->GetMinionCount_Implementation();
+		}
+		return Parms.ReturnValue;
+	}
+	static FName NAME_UCombatInterface_GetTaggedMontageByTag = FName(TEXT("GetTaggedMontageByTag"));
+	FTaggedMontage ICombatInterface::Execute_GetTaggedMontageByTag(UObject* O, FGameplayTag const& MontageTag)
+	{
+		check(O != NULL);
+		check(O->GetClass()->ImplementsInterface(UCombatInterface::StaticClass()));
+		CombatInterface_eventGetTaggedMontageByTag_Parms Parms;
+		UFunction* const Func = O->FindFunction(NAME_UCombatInterface_GetTaggedMontageByTag);
+		if (Func)
+		{
+			Parms.MontageTag=MontageTag;
+			O->ProcessEvent(Func, &Parms);
+		}
+		else if (auto I = (ICombatInterface*)(O->GetNativeInterfaceAddress(UCombatInterface::StaticClass())))
+		{
+			Parms.ReturnValue = I->GetTaggedMontageByTag_Implementation(MontageTag);
+		}
+		return Parms.ReturnValue;
+	}
+	static FName NAME_UCombatInterface_IncrementMinionCount = FName(TEXT("IncrementMinionCount"));
+	void ICombatInterface::Execute_IncrementMinionCount(UObject* O, int32 Amount)
+	{
+		check(O != NULL);
+		check(O->GetClass()->ImplementsInterface(UCombatInterface::StaticClass()));
+		CombatInterface_eventIncrementMinionCount_Parms Parms;
+		UFunction* const Func = O->FindFunction(NAME_UCombatInterface_IncrementMinionCount);
+		if (Func)
+		{
+			Parms.Amount=Amount;
+			O->ProcessEvent(Func, &Parms);
+		}
+		else if (auto I = (ICombatInterface*)(O->GetNativeInterfaceAddress(UCombatInterface::StaticClass())))
+		{
+			I->IncrementMinionCount_Implementation(Amount);
+		}
 	}
 	static FName NAME_UCombatInterface_IsDead = FName(TEXT("IsDead"));
 	bool ICombatInterface::Execute_IsDead(const UObject* O)
@@ -611,12 +926,12 @@ template<> AURA_API UScriptStruct* StaticStruct<FTaggedMontage>()
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Interaction_CombatInterface_h_Statics::ScriptStructInfo[] = {
-		{ FTaggedMontage::StaticStruct, Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewStructOps, TEXT("TaggedMontage"), &Z_Registration_Info_UScriptStruct_TaggedMontage, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FTaggedMontage), 3362767820U) },
+		{ FTaggedMontage::StaticStruct, Z_Construct_UScriptStruct_FTaggedMontage_Statics::NewStructOps, TEXT("TaggedMontage"), &Z_Registration_Info_UScriptStruct_TaggedMontage, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FTaggedMontage), 590290476U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Interaction_CombatInterface_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UCombatInterface, UCombatInterface::StaticClass, TEXT("UCombatInterface"), &Z_Registration_Info_UClass_UCombatInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCombatInterface), 3339163527U) },
+		{ Z_Construct_UClass_UCombatInterface, UCombatInterface::StaticClass, TEXT("UCombatInterface"), &Z_Registration_Info_UClass_UCombatInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCombatInterface), 3201701725U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Interaction_CombatInterface_h_2152814136(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Interaction_CombatInterface_h_2809365939(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Interaction_CombatInterface_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Interaction_CombatInterface_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Interaction_CombatInterface_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Interaction_CombatInterface_h_Statics::ScriptStructInfo),
 		nullptr, 0);

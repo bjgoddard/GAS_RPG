@@ -150,13 +150,13 @@ void EmptyLinkFunctionForGeneratedCodeAuraProjectile() {}
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_DamageEffectSpecHandle;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_LifeSpan_MetaData[];
-#endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_LifeSpan;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Sphere_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_Sphere;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_LifeSpan_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_LifeSpan;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ImpactEffect_MetaData[];
 #endif
@@ -209,20 +209,20 @@ void EmptyLinkFunctionForGeneratedCodeAuraProjectile() {}
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AAuraProjectile_Statics::NewProp_DamageEffectSpecHandle = { "DamageEffectSpecHandle", nullptr, (EPropertyFlags)0x0011000000000004, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraProjectile, DamageEffectSpecHandle), Z_Construct_UScriptStruct_FGameplayEffectSpecHandle, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraProjectile_Statics::NewProp_DamageEffectSpecHandle_MetaData), Z_Construct_UClass_AAuraProjectile_Statics::NewProp_DamageEffectSpecHandle_MetaData) }; // 2882128022
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraProjectile_Statics::NewProp_LifeSpan_MetaData[] = {
-		{ "Category", "AuraProjectile" },
-		{ "ModuleRelativePath", "Public/Actor/AuraProjectile.h" },
-	};
-#endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAuraProjectile_Statics::NewProp_LifeSpan = { "LifeSpan", nullptr, (EPropertyFlags)0x0040000000010001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraProjectile, LifeSpan), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraProjectile_Statics::NewProp_LifeSpan_MetaData), Z_Construct_UClass_AAuraProjectile_Statics::NewProp_LifeSpan_MetaData) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraProjectile_Statics::NewProp_Sphere_MetaData[] = {
 		{ "Category", "AuraProjectile" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Actor/AuraProjectile.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AAuraProjectile_Statics::NewProp_Sphere = { "Sphere", nullptr, (EPropertyFlags)0x00440000000a0009, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraProjectile, Sphere), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraProjectile_Statics::NewProp_Sphere_MetaData), Z_Construct_UClass_AAuraProjectile_Statics::NewProp_Sphere_MetaData) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AAuraProjectile_Statics::NewProp_Sphere = { "Sphere", nullptr, (EPropertyFlags)0x00240800000a001d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraProjectile, Sphere), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraProjectile_Statics::NewProp_Sphere_MetaData), Z_Construct_UClass_AAuraProjectile_Statics::NewProp_Sphere_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraProjectile_Statics::NewProp_LifeSpan_MetaData[] = {
+		{ "Category", "AuraProjectile" },
+		{ "ModuleRelativePath", "Public/Actor/AuraProjectile.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAuraProjectile_Statics::NewProp_LifeSpan = { "LifeSpan", nullptr, (EPropertyFlags)0x0040000000010001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraProjectile, LifeSpan), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraProjectile_Statics::NewProp_LifeSpan_MetaData), Z_Construct_UClass_AAuraProjectile_Statics::NewProp_LifeSpan_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraProjectile_Statics::NewProp_ImpactEffect_MetaData[] = {
 		{ "Category", "AuraProjectile" },
@@ -254,8 +254,8 @@ void EmptyLinkFunctionForGeneratedCodeAuraProjectile() {}
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAuraProjectile_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraProjectile_Statics::NewProp_ProjectileMovement,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraProjectile_Statics::NewProp_DamageEffectSpecHandle,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraProjectile_Statics::NewProp_LifeSpan,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraProjectile_Statics::NewProp_Sphere,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraProjectile_Statics::NewProp_LifeSpan,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraProjectile_Statics::NewProp_ImpactEffect,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraProjectile_Statics::NewProp_ImpactSound,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraProjectile_Statics::NewProp_LoopingSound,
@@ -299,9 +299,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraProjectile() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Actor_AuraProjectile_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAuraProjectile, AAuraProjectile::StaticClass, TEXT("AAuraProjectile"), &Z_Registration_Info_UClass_AAuraProjectile, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAuraProjectile), 2281470178U) },
+		{ Z_Construct_UClass_AAuraProjectile, AAuraProjectile::StaticClass, TEXT("AAuraProjectile"), &Z_Registration_Info_UClass_AAuraProjectile, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAuraProjectile), 1615951524U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Actor_AuraProjectile_h_4065726749(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Actor_AuraProjectile_h_571314879(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Actor_AuraProjectile_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Actor_AuraProjectile_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

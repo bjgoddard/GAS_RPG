@@ -1,7 +1,7 @@
 {
 	"RemapUnityFiles": 
 	{
-		"Module.Aura.cpp.obj": [
+		"Module.Aura.1.cpp.obj": [
 			"AttributeInfo.gen.cpp.obj",
 			"AttributeMenuWidgetController.gen.cpp.obj",
 			"Aura.init.gen.cpp.obj",
@@ -18,7 +18,9 @@
 			"AuraEffectActor.gen.cpp.obj",
 			"AuraEnemy.gen.cpp.obj",
 			"AuraGameModeBase.gen.cpp.obj",
-			"AuraGameplayAbility.gen.cpp.obj",
+			"AuraGameplayAbility.gen.cpp.obj"
+		],
+		"Module.Aura.2.cpp.obj": [
 			"AuraHUD.gen.cpp.obj",
 			"AuraInputComponent.gen.cpp.obj",
 			"AuraInputConfig.gen.cpp.obj",
@@ -39,12 +41,14 @@
 			"MMC_MaxHealth.gen.cpp.obj",
 			"MMC_MaxMana.gen.cpp.obj",
 			"OverlayWidgetController.gen.cpp.obj",
+			"SummonAbility.gen.cpp.obj",
 			"TargetDataUnderMouse.gen.cpp.obj",
 			"Aura.cpp.obj",
 			"AuraDamageGameplayAbility.cpp.obj",
 			"AuraGameplayAbility.cpp.obj",
 			"AuraMeleeAttack.cpp.obj",
 			"AuraProjectileSpell.cpp.obj",
+			"SummonAbility.cpp.obj",
 			"TargetDataUnderMouse.cpp.obj",
 			"AuraAbilitySystemComponent.cpp.obj",
 			"AuraAbilitySystemGlobals.cpp.obj",
@@ -63,7 +67,9 @@
 			"AuraAbilityTypes.cpp.obj",
 			"AuraAssetManager.cpp.obj",
 			"AuraGameplayTags.cpp.obj",
-			"AuraCharacter.cpp.obj",
+			"AuraCharacter.cpp.obj"
+		],
+		"Module.Aura.3.cpp.obj": [
 			"AuraCharacterBase.cpp.obj",
 			"AuraEnemy.cpp.obj",
 			"AuraGameModeBase.cpp.obj",
