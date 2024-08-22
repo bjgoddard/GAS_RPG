@@ -1,7 +1,8 @@
 {
 	"RemapUnityFiles": 
 	{
-		"Module.Aura.cpp.obj": [
+		"Module.Aura.1.cpp.obj": [
+			"AbilityInfo.gen.cpp.obj",
 			"AttributeInfo.gen.cpp.obj",
 			"AttributeMenuWidgetController.gen.cpp.obj",
 			"Aura.init.gen.cpp.obj",
@@ -16,7 +17,9 @@
 			"AuraCharacterBase.gen.cpp.obj",
 			"AuraDamageGameplayAbility.gen.cpp.obj",
 			"AuraEffectActor.gen.cpp.obj",
-			"AuraEnemy.gen.cpp.obj",
+			"AuraEnemy.gen.cpp.obj"
+		],
+		"Module.Aura.2.cpp.obj": [
 			"AuraGameModeBase.gen.cpp.obj",
 			"AuraGameplayAbility.gen.cpp.obj",
 			"AuraHUD.gen.cpp.obj",
@@ -36,22 +39,32 @@
 			"DamageTextComponent.gen.cpp.obj",
 			"EnemyInterface.gen.cpp.obj",
 			"ExecCalc_Damage.gen.cpp.obj",
+			"LevelUpInfo.gen.cpp.obj",
 			"MMC_MaxHealth.gen.cpp.obj",
 			"MMC_MaxMana.gen.cpp.obj",
 			"OverlayWidgetController.gen.cpp.obj",
+			"SummonAbility.gen.cpp.obj",
 			"TargetDataUnderMouse.gen.cpp.obj",
+			"WaitCooldownChange.gen.cpp.obj"
+		],
+		"Module.Aura.3.cpp.obj": [
 			"Aura.cpp.obj",
+			"AuraLogChannels.cpp.obj",
 			"AuraDamageGameplayAbility.cpp.obj",
 			"AuraGameplayAbility.cpp.obj",
 			"AuraMeleeAttack.cpp.obj",
 			"AuraProjectileSpell.cpp.obj",
+			"SummonAbility.cpp.obj",
 			"TargetDataUnderMouse.cpp.obj",
+			"WaitCooldownChange.cpp.obj",
 			"AuraAbilitySystemComponent.cpp.obj",
 			"AuraAbilitySystemGlobals.cpp.obj",
 			"AuraAbilitySystemLibrary.cpp.obj",
 			"AuraAttributeSet.cpp.obj",
+			"AbilityInfo.cpp.obj",
 			"AttributeInfo.cpp.obj",
 			"CharacterClassInfo.cpp.obj",
+			"LevelUpInfo.cpp.obj",
 			"ExecCalc_Damage.cpp.obj",
 			"MMC_MaxHealth.cpp.obj",
 			"MMC_MaxMana.cpp.obj",
