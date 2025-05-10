@@ -8,7 +8,7 @@
 #include "CharacterClassInfo.generated.h"
 
 class UGameplayAbility;
-
+class UGameplayEffect;
 
 UENUM(BlueprintType)
 enum class ECharacterClass : uint8

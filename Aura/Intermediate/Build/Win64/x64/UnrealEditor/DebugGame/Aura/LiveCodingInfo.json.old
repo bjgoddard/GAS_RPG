@@ -16,10 +16,10 @@
 			"AuraCharacter.gen.cpp.obj",
 			"AuraCharacterBase.gen.cpp.obj",
 			"AuraDamageGameplayAbility.gen.cpp.obj",
-			"AuraEffectActor.gen.cpp.obj",
-			"AuraEnemy.gen.cpp.obj"
+			"AuraEffectActor.gen.cpp.obj"
 		],
 		"Module.Aura.2.cpp.obj": [
+			"AuraEnemy.gen.cpp.obj",
 			"AuraGameModeBase.gen.cpp.obj",
 			"AuraGameplayAbility.gen.cpp.obj",
 			"AuraHUD.gen.cpp.obj",
@@ -42,12 +42,15 @@
 			"LevelUpInfo.gen.cpp.obj",
 			"MMC_MaxHealth.gen.cpp.obj",
 			"MMC_MaxMana.gen.cpp.obj",
-			"OverlayWidgetController.gen.cpp.obj",
-			"SummonAbility.gen.cpp.obj",
-			"TargetDataUnderMouse.gen.cpp.obj",
-			"WaitCooldownChange.gen.cpp.obj"
+			"OverlayWidgetController.gen.cpp.obj"
 		],
 		"Module.Aura.3.cpp.obj": [
+			"PlayerInterface.gen.cpp.obj",
+			"SkillMenuWidgetController.gen.cpp.obj",
+			"SpellMenuWidgetController.gen.cpp.obj",
+			"SummonAbility.gen.cpp.obj",
+			"TargetDataUnderMouse.gen.cpp.obj",
+			"WaitCooldownChange.gen.cpp.obj",
 			"Aura.cpp.obj",
 			"AuraLogChannels.cpp.obj",
 			"AuraDamageGameplayAbility.cpp.obj",
@@ -84,12 +87,14 @@
 			"AuraInputConfig.cpp.obj",
 			"CombatInterface.cpp.obj",
 			"EnemyInterface.cpp.obj",
+			"PlayerInterface.cpp.obj",
 			"AuraPlayerController.cpp.obj",
 			"AuraPlayerState.cpp.obj",
 			"AuraHUD.cpp.obj",
 			"AttributeMenuWidgetController.cpp.obj",
 			"AuraWidgetController.cpp.obj",
 			"OverlayWidgetController.cpp.obj",
+			"SkillMenuWidgetController.cpp.obj",
 			"AuraUserWidget.cpp.obj",
 			"DamageTextComponent.cpp.obj"
 		]

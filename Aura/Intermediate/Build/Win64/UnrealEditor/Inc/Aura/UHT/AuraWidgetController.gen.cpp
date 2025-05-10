@@ -6,11 +6,20 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Aura/Public/UI/WidgetController/AuraWidgetController.h"
+#include "Aura/Public/AbilitySystem/Data/AbilityInfo.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeAuraWidgetController() {}
 // Cross Module References
+	AURA_API UClass* Z_Construct_UClass_AAuraPlayerController_NoRegister();
+	AURA_API UClass* Z_Construct_UClass_AAuraPlayerState_NoRegister();
+	AURA_API UClass* Z_Construct_UClass_UAbilityInfo_NoRegister();
+	AURA_API UClass* Z_Construct_UClass_UAuraAbilitySystemComponent_NoRegister();
+	AURA_API UClass* Z_Construct_UClass_UAuraAttributeSet_NoRegister();
 	AURA_API UClass* Z_Construct_UClass_UAuraWidgetController();
 	AURA_API UClass* Z_Construct_UClass_UAuraWidgetController_NoRegister();
+	AURA_API UFunction* Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature();
+	AURA_API UFunction* Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature();
+	AURA_API UScriptStruct* Z_Construct_UScriptStruct_FAuraAbilityInfo();
 	AURA_API UScriptStruct* Z_Construct_UScriptStruct_FWidgetControllerParams();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
 	ENGINE_API UClass* Z_Construct_UClass_APlayerController_NoRegister();
@@ -19,6 +28,102 @@ void EmptyLinkFunctionForGeneratedCodeAuraWidgetController() {}
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAttributeSet_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
+	struct Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics
+	{
+		struct _Script_Aura_eventOnPlayerStatChangedSignature_Parms
+		{
+			int32 NewValue;
+		};
+		static const UECodeGen_Private::FIntPropertyParams NewProp_NewValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::NewProp_NewValue = { "NewValue", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Aura_eventOnPlayerStatChangedSignature_Parms, NewValue), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::NewProp_NewValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/UI/WidgetController/AuraWidgetController.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_Aura, nullptr, "OnPlayerStatChangedSignature__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::_Script_Aura_eventOnPlayerStatChangedSignature_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::_Script_Aura_eventOnPlayerStatChangedSignature_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_Aura_OnPlayerStatChangedSignature__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+void FOnPlayerStatChangedSignature_DelegateWrapper(const FMulticastScriptDelegate& OnPlayerStatChangedSignature, int32 NewValue)
+{
+	struct _Script_Aura_eventOnPlayerStatChangedSignature_Parms
+	{
+		int32 NewValue;
+	};
+	_Script_Aura_eventOnPlayerStatChangedSignature_Parms Parms;
+	Parms.NewValue=NewValue;
+	OnPlayerStatChangedSignature.ProcessMulticastDelegate<UObject>(&Parms);
+}
+	struct Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics
+	{
+		struct _Script_Aura_eventAbilityInfoSignature_Parms
+		{
+			FAuraAbilityInfo Info;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Info_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Info;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::NewProp_Info_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::NewProp_Info = { "Info", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Aura_eventAbilityInfoSignature_Parms, Info), Z_Construct_UScriptStruct_FAuraAbilityInfo, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::NewProp_Info_MetaData), Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::NewProp_Info_MetaData) }; // 3343636261
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::NewProp_Info,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/UI/WidgetController/AuraWidgetController.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_Aura, nullptr, "AbilityInfoSignature__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::_Script_Aura_eventAbilityInfoSignature_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::_Script_Aura_eventAbilityInfoSignature_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+void FAbilityInfoSignature_DelegateWrapper(const FMulticastScriptDelegate& AbilityInfoSignature, FAuraAbilityInfo const& Info)
+{
+	struct _Script_Aura_eventAbilityInfoSignature_Parms
+	{
+		FAuraAbilityInfo Info;
+	};
+	_Script_Aura_eventAbilityInfoSignature_Parms Parms;
+	Parms.Info=Info;
+	AbilityInfoSignature.ProcessMulticastDelegate<UObject>(&Parms);
+}
 	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_WidgetControllerParams;
 class UScriptStruct* FWidgetControllerParams::StaticStruct()
 {
@@ -226,6 +331,14 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AbilityInfoDelegate_MetaData[];
+#endif
+		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_AbilityInfoDelegate;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AbilityInfo_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_AbilityInfo;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_PlayerController_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_PlayerController;
@@ -241,6 +354,22 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_AttributeSet_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_AttributeSet;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AuraPlayerController_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_AuraPlayerController;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AuraPlayerState_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_AuraPlayerState;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AuraAbilitySystemComponent_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_AuraAbilitySystemComponent;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AuraAttributeSet_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_AuraAttributeSet;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -264,6 +393,20 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 		{ "ModuleRelativePath", "Public/UI/WidgetController/AuraWidgetController.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AbilityInfoDelegate_MetaData[] = {
+		{ "Category", "GAS|Messages" },
+		{ "ModuleRelativePath", "Public/UI/WidgetController/AuraWidgetController.h" },
+	};
+#endif
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AbilityInfoDelegate = { "AbilityInfoDelegate", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAuraWidgetController, AbilityInfoDelegate), Z_Construct_UDelegateFunction_Aura_AbilityInfoSignature__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AbilityInfoDelegate_MetaData), Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AbilityInfoDelegate_MetaData) }; // 3592017156
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AbilityInfo_MetaData[] = {
+		{ "Category", "Widget Data" },
+		{ "ModuleRelativePath", "Public/UI/WidgetController/AuraWidgetController.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AbilityInfo = { "AbilityInfo", nullptr, (EPropertyFlags)0x0024080000010015, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAuraWidgetController, AbilityInfo), Z_Construct_UClass_UAbilityInfo_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AbilityInfo_MetaData), Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AbilityInfo_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_PlayerController_MetaData[] = {
 		{ "Category", "WidgetController" },
@@ -294,11 +437,47 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 	};
 #endif
 	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AttributeSet = { "AttributeSet", nullptr, (EPropertyFlags)0x002408000008001c, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAuraWidgetController, AttributeSet), Z_Construct_UClass_UAttributeSet_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AttributeSet_MetaData), Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AttributeSet_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraPlayerController_MetaData[] = {
+		{ "Category", "WidgetController" },
+		{ "ModuleRelativePath", "Public/UI/WidgetController/AuraWidgetController.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraPlayerController = { "AuraPlayerController", nullptr, (EPropertyFlags)0x0024080000000014, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAuraWidgetController, AuraPlayerController), Z_Construct_UClass_AAuraPlayerController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraPlayerController_MetaData), Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraPlayerController_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraPlayerState_MetaData[] = {
+		{ "Category", "WidgetController" },
+		{ "ModuleRelativePath", "Public/UI/WidgetController/AuraWidgetController.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraPlayerState = { "AuraPlayerState", nullptr, (EPropertyFlags)0x0024080000000014, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAuraWidgetController, AuraPlayerState), Z_Construct_UClass_AAuraPlayerState_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraPlayerState_MetaData), Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraPlayerState_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraAbilitySystemComponent_MetaData[] = {
+		{ "Category", "WidgetController" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/UI/WidgetController/AuraWidgetController.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraAbilitySystemComponent = { "AuraAbilitySystemComponent", nullptr, (EPropertyFlags)0x002408000008001c, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAuraWidgetController, AuraAbilitySystemComponent), Z_Construct_UClass_UAuraAbilitySystemComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraAbilitySystemComponent_MetaData), Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraAbilitySystemComponent_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraAttributeSet_MetaData[] = {
+		{ "Category", "WidgetController" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/UI/WidgetController/AuraWidgetController.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraAttributeSet = { "AuraAttributeSet", nullptr, (EPropertyFlags)0x002408000008001c, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAuraWidgetController, AuraAttributeSet), Z_Construct_UClass_UAuraAttributeSet_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraAttributeSet_MetaData), Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraAttributeSet_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UAuraWidgetController_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AbilityInfoDelegate,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AbilityInfo,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_PlayerController,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_PlayerState,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AbilitySystemComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AttributeSet,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraPlayerController,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraPlayerState,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraAbilitySystemComponent,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAuraWidgetController_Statics::NewProp_AuraAttributeSet,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UAuraWidgetController_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UAuraWidgetController>::IsAbstract,
@@ -343,9 +522,9 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 		{ FWidgetControllerParams::StaticStruct, Z_Construct_UScriptStruct_FWidgetControllerParams_Statics::NewStructOps, TEXT("WidgetControllerParams"), &Z_Registration_Info_UScriptStruct_WidgetControllerParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FWidgetControllerParams), 1223616045U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UAuraWidgetController, UAuraWidgetController::StaticClass, TEXT("UAuraWidgetController"), &Z_Registration_Info_UClass_UAuraWidgetController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraWidgetController), 1727270520U) },
+		{ Z_Construct_UClass_UAuraWidgetController, UAuraWidgetController::StaticClass, TEXT("UAuraWidgetController"), &Z_Registration_Info_UClass_UAuraWidgetController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraWidgetController), 4131289045U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_2578844676(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_2332819958(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_Statics::ScriptStructInfo),
 		nullptr, 0);

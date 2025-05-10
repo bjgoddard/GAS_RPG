@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeAuraHUD() {}
 	AURA_API UClass* Z_Construct_UClass_UAttributeMenuWidgetController_NoRegister();
 	AURA_API UClass* Z_Construct_UClass_UAuraUserWidget_NoRegister();
 	AURA_API UClass* Z_Construct_UClass_UOverlayWidgetController_NoRegister();
+	AURA_API UClass* Z_Construct_UClass_USkillMenuWidgetController_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_AHUD();
 	UPackage* Z_Construct_UPackage__Script_Aura();
@@ -56,6 +57,14 @@ void EmptyLinkFunctionForGeneratedCodeAuraHUD() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_AttributeMenuWidgetControllerClass_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_AttributeMenuWidgetControllerClass;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SkillMenuWidgetController_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_SkillMenuWidgetController;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SkillMenuWidgetControllerClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_SkillMenuWidgetControllerClass;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -116,6 +125,19 @@ void EmptyLinkFunctionForGeneratedCodeAuraHUD() {}
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AAuraHUD_Statics::NewProp_AttributeMenuWidgetControllerClass = { "AttributeMenuWidgetControllerClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraHUD, AttributeMenuWidgetControllerClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UAttributeMenuWidgetController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraHUD_Statics::NewProp_AttributeMenuWidgetControllerClass_MetaData), Z_Construct_UClass_AAuraHUD_Statics::NewProp_AttributeMenuWidgetControllerClass_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraHUD_Statics::NewProp_SkillMenuWidgetController_MetaData[] = {
+		{ "ModuleRelativePath", "Public/UI/HUD/AuraHUD.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AAuraHUD_Statics::NewProp_SkillMenuWidgetController = { "SkillMenuWidgetController", nullptr, (EPropertyFlags)0x0044000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraHUD, SkillMenuWidgetController), Z_Construct_UClass_USkillMenuWidgetController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraHUD_Statics::NewProp_SkillMenuWidgetController_MetaData), Z_Construct_UClass_AAuraHUD_Statics::NewProp_SkillMenuWidgetController_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraHUD_Statics::NewProp_SkillMenuWidgetControllerClass_MetaData[] = {
+		{ "Category", "AuraHUD" },
+		{ "ModuleRelativePath", "Public/UI/HUD/AuraHUD.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AAuraHUD_Statics::NewProp_SkillMenuWidgetControllerClass = { "SkillMenuWidgetControllerClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraHUD, SkillMenuWidgetControllerClass), Z_Construct_UClass_UClass, Z_Construct_UClass_USkillMenuWidgetController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraHUD_Statics::NewProp_SkillMenuWidgetControllerClass_MetaData), Z_Construct_UClass_AAuraHUD_Statics::NewProp_SkillMenuWidgetControllerClass_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAuraHUD_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraHUD_Statics::NewProp_OverlayWidget,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraHUD_Statics::NewProp_OverlayWidgetClass,
@@ -123,6 +145,8 @@ void EmptyLinkFunctionForGeneratedCodeAuraHUD() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraHUD_Statics::NewProp_OverlayWidgetControllerClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraHUD_Statics::NewProp_AttributeMenuWidgetController,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraHUD_Statics::NewProp_AttributeMenuWidgetControllerClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraHUD_Statics::NewProp_SkillMenuWidgetController,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraHUD_Statics::NewProp_SkillMenuWidgetControllerClass,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AAuraHUD_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AAuraHUD>::IsAbstract,
@@ -163,9 +187,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraHUD() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_HUD_AuraHUD_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAuraHUD, AAuraHUD::StaticClass, TEXT("AAuraHUD"), &Z_Registration_Info_UClass_AAuraHUD, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAuraHUD), 789464222U) },
+		{ Z_Construct_UClass_AAuraHUD, AAuraHUD::StaticClass, TEXT("AAuraHUD"), &Z_Registration_Info_UClass_AAuraHUD, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAuraHUD), 3284096692U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_HUD_AuraHUD_h_646811195(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_HUD_AuraHUD_h_4269911948(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_HUD_AuraHUD_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_HUD_AuraHUD_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

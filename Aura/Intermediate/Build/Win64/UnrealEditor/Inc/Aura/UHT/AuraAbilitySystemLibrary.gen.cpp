@@ -6,16 +6,21 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Aura/Public/AbilitySystem/AuraAbilitySystemLibrary.h"
+#include "Aura/Public/UI/WidgetController/AuraWidgetController.h"
 #include "GameplayEffectTypes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeAuraAbilitySystemLibrary() {}
 // Cross Module References
+	AURA_API UClass* Z_Construct_UClass_AAuraHUD_NoRegister();
+	AURA_API UClass* Z_Construct_UClass_UAbilityInfo_NoRegister();
 	AURA_API UClass* Z_Construct_UClass_UAttributeMenuWidgetController_NoRegister();
 	AURA_API UClass* Z_Construct_UClass_UAuraAbilitySystemLibrary();
 	AURA_API UClass* Z_Construct_UClass_UAuraAbilitySystemLibrary_NoRegister();
 	AURA_API UClass* Z_Construct_UClass_UCharacterClassInfo_NoRegister();
 	AURA_API UClass* Z_Construct_UClass_UOverlayWidgetController_NoRegister();
+	AURA_API UClass* Z_Construct_UClass_USkillMenuWidgetController_NoRegister();
 	AURA_API UEnum* Z_Construct_UEnum_Aura_ECharacterClass();
+	AURA_API UScriptStruct* Z_Construct_UScriptStruct_FWidgetControllerParams();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UObject_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
@@ -79,6 +84,14 @@ void EmptyLinkFunctionForGeneratedCodeAuraAbilitySystemLibrary() {}
 		*(bool*)Z_Param__Result=UAuraAbilitySystemLibrary::IsBlockedHit(Z_Param_Out_EffectContextHandle);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UAuraAbilitySystemLibrary::execGetAbilityInfo)
+	{
+		P_GET_OBJECT(UObject,Z_Param_WorldContextObject);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(UAbilityInfo**)Z_Param__Result=UAuraAbilitySystemLibrary::GetAbilityInfo(Z_Param_WorldContextObject);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UAuraAbilitySystemLibrary::execGetCharacterClassInfo)
 	{
 		P_GET_OBJECT(UObject,Z_Param_WorldContextObject);
@@ -108,6 +121,14 @@ void EmptyLinkFunctionForGeneratedCodeAuraAbilitySystemLibrary() {}
 		UAuraAbilitySystemLibrary::InitializeDefaultAttributes(Z_Param_WorldContextObject,ECharacterClass(Z_Param_CharacterClass),Z_Param_Level,Z_Param_ASC);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UAuraAbilitySystemLibrary::execGetSkillMenuWidgetController)
+	{
+		P_GET_OBJECT(UObject,Z_Param_WorldContextObject);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(USkillMenuWidgetController**)Z_Param__Result=UAuraAbilitySystemLibrary::GetSkillMenuWidgetController(Z_Param_WorldContextObject);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UAuraAbilitySystemLibrary::execGetAttributeMenuWidgetController)
 	{
 		P_GET_OBJECT(UObject,Z_Param_WorldContextObject);
@@ -124,23 +145,83 @@ void EmptyLinkFunctionForGeneratedCodeAuraAbilitySystemLibrary() {}
 		*(UOverlayWidgetController**)Z_Param__Result=UAuraAbilitySystemLibrary::GetOverlayWidgetController(Z_Param_WorldContextObject);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UAuraAbilitySystemLibrary::execMakeWidgetControllerParams)
+	{
+		P_GET_OBJECT(UObject,Z_Param_WorldContextObject);
+		P_GET_STRUCT_REF(FWidgetControllerParams,Z_Param_Out_OutWCParams);
+		P_GET_OBJECT_REF(AAuraHUD,Z_Param_Out_OutAuraHUD);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(bool*)Z_Param__Result=UAuraAbilitySystemLibrary::MakeWidgetControllerParams(Z_Param_WorldContextObject,Z_Param_Out_OutWCParams,Z_Param_Out_OutAuraHUD);
+		P_NATIVE_END;
+	}
 	void UAuraAbilitySystemLibrary::StaticRegisterNativesUAuraAbilitySystemLibrary()
 	{
 		UClass* Class = UAuraAbilitySystemLibrary::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "GetAbilityInfo", &UAuraAbilitySystemLibrary::execGetAbilityInfo },
 			{ "GetAttributeMenuWidgetController", &UAuraAbilitySystemLibrary::execGetAttributeMenuWidgetController },
 			{ "GetCharacterClassInfo", &UAuraAbilitySystemLibrary::execGetCharacterClassInfo },
 			{ "GetLivePlayersWithinRadius", &UAuraAbilitySystemLibrary::execGetLivePlayersWithinRadius },
 			{ "GetOverlayWidgetController", &UAuraAbilitySystemLibrary::execGetOverlayWidgetController },
+			{ "GetSkillMenuWidgetController", &UAuraAbilitySystemLibrary::execGetSkillMenuWidgetController },
 			{ "GiveStartupAbilities", &UAuraAbilitySystemLibrary::execGiveStartupAbilities },
 			{ "InitializeDefaultAttributes", &UAuraAbilitySystemLibrary::execInitializeDefaultAttributes },
 			{ "IsBlockedHit", &UAuraAbilitySystemLibrary::execIsBlockedHit },
 			{ "IsCriticalHit", &UAuraAbilitySystemLibrary::execIsCriticalHit },
 			{ "IsNotFriendly", &UAuraAbilitySystemLibrary::execIsNotFriendly },
+			{ "MakeWidgetControllerParams", &UAuraAbilitySystemLibrary::execMakeWidgetControllerParams },
 			{ "SetIsBlockedHit", &UAuraAbilitySystemLibrary::execSetIsBlockedHit },
 			{ "SetIsCriticalHit", &UAuraAbilitySystemLibrary::execSetIsCriticalHit },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics
+	{
+		struct AuraAbilitySystemLibrary_eventGetAbilityInfo_Parms
+		{
+			const UObject* WorldContextObject;
+			UAbilityInfo* ReturnValue;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_WorldContextObject_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_WorldContextObject;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::NewProp_WorldContextObject_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::NewProp_WorldContextObject = { "WorldContextObject", nullptr, (EPropertyFlags)0x0010000000000082, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraAbilitySystemLibrary_eventGetAbilityInfo_Parms, WorldContextObject), Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::NewProp_WorldContextObject_MetaData), Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::NewProp_WorldContextObject_MetaData) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraAbilitySystemLibrary_eventGetAbilityInfo_Parms, ReturnValue), Z_Construct_UClass_UAbilityInfo_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::NewProp_WorldContextObject,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::Function_MetaDataParams[] = {
+		{ "Category", "AuraAbilitySystemLibrary|CharacterClassDefaults" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/AuraAbilitySystemLibrary.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UAuraAbilitySystemLibrary, nullptr, "GetAbilityInfo", nullptr, nullptr, Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::PropPointers), sizeof(Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::AuraAbilitySystemLibrary_eventGetAbilityInfo_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::Function_MetaDataParams), Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::AuraAbilitySystemLibrary_eventGetAbilityInfo_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAttributeMenuWidgetController_Statics
 	{
@@ -174,6 +255,7 @@ void EmptyLinkFunctionForGeneratedCodeAuraAbilitySystemLibrary() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAttributeMenuWidgetController_Statics::Function_MetaDataParams[] = {
 		{ "Category", "AuraAbilitySystemLibrary|WidgetController" },
+		{ "DefaultToSelf", "WorldContextObject" },
 		{ "ModuleRelativePath", "Public/AbilitySystem/AuraAbilitySystemLibrary.h" },
 	};
 #endif
@@ -349,6 +431,7 @@ void EmptyLinkFunctionForGeneratedCodeAuraAbilitySystemLibrary() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetOverlayWidgetController_Statics::Function_MetaDataParams[] = {
 		{ "Category", "AuraAbilitySystemLibrary|WidgetController" },
+		{ "DefaultToSelf", "WorldContextObject" },
 		{ "ModuleRelativePath", "Public/AbilitySystem/AuraAbilitySystemLibrary.h" },
 	};
 #endif
@@ -361,6 +444,54 @@ void EmptyLinkFunctionForGeneratedCodeAuraAbilitySystemLibrary() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetOverlayWidgetController_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics
+	{
+		struct AuraAbilitySystemLibrary_eventGetSkillMenuWidgetController_Parms
+		{
+			const UObject* WorldContextObject;
+			USkillMenuWidgetController* ReturnValue;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_WorldContextObject_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_WorldContextObject;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::NewProp_WorldContextObject_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::NewProp_WorldContextObject = { "WorldContextObject", nullptr, (EPropertyFlags)0x0010000000000082, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraAbilitySystemLibrary_eventGetSkillMenuWidgetController_Parms, WorldContextObject), Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::NewProp_WorldContextObject_MetaData), Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::NewProp_WorldContextObject_MetaData) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraAbilitySystemLibrary_eventGetSkillMenuWidgetController_Parms, ReturnValue), Z_Construct_UClass_USkillMenuWidgetController_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::NewProp_WorldContextObject,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::Function_MetaDataParams[] = {
+		{ "Category", "AuraAbilitySystemLibrary|WidgetController" },
+		{ "DefaultToSelf", "WorldContextObject" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/AuraAbilitySystemLibrary.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UAuraAbilitySystemLibrary, nullptr, "GetSkillMenuWidgetController", nullptr, nullptr, Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::PropPointers), sizeof(Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::AuraAbilitySystemLibrary_eventGetSkillMenuWidgetController_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14022401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::Function_MetaDataParams), Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::AuraAbilitySystemLibrary_eventGetSkillMenuWidgetController_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -644,6 +775,67 @@ void EmptyLinkFunctionForGeneratedCodeAuraAbilitySystemLibrary() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics
+	{
+		struct AuraAbilitySystemLibrary_eventMakeWidgetControllerParams_Parms
+		{
+			const UObject* WorldContextObject;
+			FWidgetControllerParams OutWCParams;
+			AAuraHUD* OutAuraHUD;
+			bool ReturnValue;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_WorldContextObject_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_WorldContextObject;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OutWCParams;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_OutAuraHUD;
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_WorldContextObject_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_WorldContextObject = { "WorldContextObject", nullptr, (EPropertyFlags)0x0010000000000082, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraAbilitySystemLibrary_eventMakeWidgetControllerParams_Parms, WorldContextObject), Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_WorldContextObject_MetaData), Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_WorldContextObject_MetaData) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_OutWCParams = { "OutWCParams", nullptr, (EPropertyFlags)0x0010008000000180, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraAbilitySystemLibrary_eventMakeWidgetControllerParams_Parms, OutWCParams), Z_Construct_UScriptStruct_FWidgetControllerParams, METADATA_PARAMS(0, nullptr) }; // 1223616045
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_OutAuraHUD = { "OutAuraHUD", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraAbilitySystemLibrary_eventMakeWidgetControllerParams_Parms, OutAuraHUD), Z_Construct_UClass_AAuraHUD_NoRegister, METADATA_PARAMS(0, nullptr) };
+	void Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((AuraAbilitySystemLibrary_eventMakeWidgetControllerParams_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AuraAbilitySystemLibrary_eventMakeWidgetControllerParams_Parms), &Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_WorldContextObject,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_OutWCParams,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_OutAuraHUD,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::Function_MetaDataParams[] = {
+		{ "Category", "AuraAbilitySystemLibrary|WidgetController" },
+		{ "DefaultToSelf", "WorldContextObject" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/AuraAbilitySystemLibrary.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UAuraAbilitySystemLibrary, nullptr, "MakeWidgetControllerParams", nullptr, nullptr, Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::PropPointers), sizeof(Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::AuraAbilitySystemLibrary_eventMakeWidgetControllerParams_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14422401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::Function_MetaDataParams), Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::AuraAbilitySystemLibrary_eventMakeWidgetControllerParams_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_UAuraAbilitySystemLibrary_SetIsBlockedHit_Statics
 	{
 		struct AuraAbilitySystemLibrary_eventSetIsBlockedHit_Parms
@@ -753,15 +945,18 @@ void EmptyLinkFunctionForGeneratedCodeAuraAbilitySystemLibrary() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraAbilitySystemLibrary_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UAuraAbilitySystemLibrary_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAttributeMenuWidgetController, "GetAttributeMenuWidgetController" }, // 3446637329
+		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAbilityInfo, "GetAbilityInfo" }, // 2735469630
+		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetAttributeMenuWidgetController, "GetAttributeMenuWidgetController" }, // 429363374
 		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetCharacterClassInfo, "GetCharacterClassInfo" }, // 4034405440
 		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetLivePlayersWithinRadius, "GetLivePlayersWithinRadius" }, // 473912936
-		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetOverlayWidgetController, "GetOverlayWidgetController" }, // 3080991942
+		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetOverlayWidgetController, "GetOverlayWidgetController" }, // 1194188365
+		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_GetSkillMenuWidgetController, "GetSkillMenuWidgetController" }, // 3282065322
 		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_GiveStartupAbilities, "GiveStartupAbilities" }, // 482017291
 		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_InitializeDefaultAttributes, "InitializeDefaultAttributes" }, // 3572054009
 		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_IsBlockedHit, "IsBlockedHit" }, // 2196732682
 		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_IsCriticalHit, "IsCriticalHit" }, // 3761536091
 		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_IsNotFriendly, "IsNotFriendly" }, // 541155145
+		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_MakeWidgetControllerParams, "MakeWidgetControllerParams" }, // 590982872
 		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_SetIsBlockedHit, "SetIsBlockedHit" }, // 3206835183
 		{ &Z_Construct_UFunction_UAuraAbilitySystemLibrary_SetIsCriticalHit, "SetIsCriticalHit" }, // 3385614641
 	};
@@ -813,9 +1008,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraAbilitySystemLibrary() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_AuraAbilitySystemLibrary_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UAuraAbilitySystemLibrary, UAuraAbilitySystemLibrary::StaticClass, TEXT("UAuraAbilitySystemLibrary"), &Z_Registration_Info_UClass_UAuraAbilitySystemLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraAbilitySystemLibrary), 1146864439U) },
+		{ Z_Construct_UClass_UAuraAbilitySystemLibrary, UAuraAbilitySystemLibrary::StaticClass, TEXT("UAuraAbilitySystemLibrary"), &Z_Registration_Info_UClass_UAuraAbilitySystemLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraAbilitySystemLibrary), 4023794194U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_AuraAbilitySystemLibrary_h_3921925806(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_AuraAbilitySystemLibrary_h_616784512(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_AuraAbilitySystemLibrary_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_AuraAbilitySystemLibrary_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

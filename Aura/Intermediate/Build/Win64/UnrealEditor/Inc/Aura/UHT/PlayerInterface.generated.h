@@ -19,7 +19,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Interaction_PlayerInterface_h_13_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Interaction_PlayerInterface_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void LevelUp_Implementation() {}; \
+	virtual int32 GetSpellPoints_Implementation() const { return 0; }; \
 	virtual void AddToSpellPoints_Implementation(int32 InSpellPoints) {}; \
+	virtual int32 GetAttributePoints_Implementation() const { return 0; }; \
 	virtual void AddToAttributePoints_Implementation(int32 InAttributePoints) {}; \
 	virtual void AddToPlayerLevel_Implementation(int32 PlayerLevel) {}; \
 	virtual void AddToXP_Implementation(int32 InXP) {}; \
@@ -29,7 +31,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual int32 FindLevelForXP_Implementation(int32 InXP) const { return 0; }; \
  \
 	DECLARE_FUNCTION(execLevelUp); \
+	DECLARE_FUNCTION(execGetSpellPoints); \
 	DECLARE_FUNCTION(execAddToSpellPoints); \
+	DECLARE_FUNCTION(execGetAttributePoints); \
 	DECLARE_FUNCTION(execAddToAttributePoints); \
 	DECLARE_FUNCTION(execAddToPlayerLevel); \
 	DECLARE_FUNCTION(execAddToXP); \
@@ -83,7 +87,9 @@ public: \
 	static void Execute_AddToSpellPoints(UObject* O, int32 InSpellPoints); \
 	static void Execute_AddToXP(UObject* O, int32 InXP); \
 	static int32 Execute_FindLevelForXP(const UObject* O, int32 InXP); \
+	static int32 Execute_GetAttributePoints(const UObject* O); \
 	static int32 Execute_GetAttributePointsReward(const UObject* O, int32 Level); \
+	static int32 Execute_GetSpellPoints(const UObject* O); \
 	static int32 Execute_GetSpellPointsReward(const UObject* O, int32 Level); \
 	static int32 Execute_GetXP(const UObject* O); \
 	static void Execute_LevelUp(UObject* O); \

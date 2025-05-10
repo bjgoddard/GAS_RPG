@@ -18,6 +18,22 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerState() {}
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAttributeSet_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
+	DEFINE_FUNCTION(AAuraPlayerState::execOnRep_SpellPoints)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_OldSpellPoints);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_SpellPoints(Z_Param_OldSpellPoints);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AAuraPlayerState::execOnRep_AttributePoints)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_OldAttributePoints);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_AttributePoints(Z_Param_OldAttributePoints);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AAuraPlayerState::execOnRep_XP)
 	{
 		P_GET_PROPERTY(FIntProperty,Z_Param_OldXP);
@@ -38,10 +54,46 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerState() {}
 	{
 		UClass* Class = AAuraPlayerState::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "OnRep_AttributePoints", &AAuraPlayerState::execOnRep_AttributePoints },
 			{ "OnRep_Level", &AAuraPlayerState::execOnRep_Level },
+			{ "OnRep_SpellPoints", &AAuraPlayerState::execOnRep_SpellPoints },
 			{ "OnRep_XP", &AAuraPlayerState::execOnRep_XP },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics
+	{
+		struct AuraPlayerState_eventOnRep_AttributePoints_Parms
+		{
+			int32 OldAttributePoints;
+		};
+		static const UECodeGen_Private::FIntPropertyParams NewProp_OldAttributePoints;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::NewProp_OldAttributePoints = { "OldAttributePoints", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraPlayerState_eventOnRep_AttributePoints_Parms, OldAttributePoints), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::NewProp_OldAttributePoints,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Player/AuraPlayerState.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAuraPlayerState, nullptr, "OnRep_AttributePoints", nullptr, nullptr, Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::PropPointers), sizeof(Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::AuraPlayerState_eventOnRep_AttributePoints_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::AuraPlayerState_eventOnRep_AttributePoints_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AAuraPlayerState_OnRep_Level_Statics
 	{
@@ -74,6 +126,40 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerState() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAuraPlayerState_OnRep_Level_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics
+	{
+		struct AuraPlayerState_eventOnRep_SpellPoints_Parms
+		{
+			int32 OldSpellPoints;
+		};
+		static const UECodeGen_Private::FIntPropertyParams NewProp_OldSpellPoints;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::NewProp_OldSpellPoints = { "OldSpellPoints", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraPlayerState_eventOnRep_SpellPoints_Parms, OldSpellPoints), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::NewProp_OldSpellPoints,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Player/AuraPlayerState.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAuraPlayerState, nullptr, "OnRep_SpellPoints", nullptr, nullptr, Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::PropPointers), sizeof(Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::AuraPlayerState_eventOnRep_SpellPoints_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::AuraPlayerState_eventOnRep_SpellPoints_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -143,6 +229,14 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerState() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_XP_MetaData[];
 #endif
 		static const UECodeGen_Private::FIntPropertyParams NewProp_XP;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AttributePoints_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_AttributePoints;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SpellPoints_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_SpellPoints;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
@@ -154,7 +248,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerState() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraPlayerState_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_AAuraPlayerState_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AAuraPlayerState_OnRep_AttributePoints, "OnRep_AttributePoints" }, // 2321217675
 		{ &Z_Construct_UFunction_AAuraPlayerState_OnRep_Level, "OnRep_Level" }, // 3146633209
+		{ &Z_Construct_UFunction_AAuraPlayerState_OnRep_SpellPoints, "OnRep_SpellPoints" }, // 4026007862
 		{ &Z_Construct_UFunction_AAuraPlayerState_OnRep_XP, "OnRep_XP" }, // 721828525
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraPlayerState_Statics::FuncInfo) < 2048);
@@ -205,12 +301,28 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerState() {}
 	};
 #endif
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_XP = { "XP", "OnRep_XP", (EPropertyFlags)0x0040000100020021, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraPlayerState, XP), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_XP_MetaData), Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_XP_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_AttributePoints_MetaData[] = {
+		{ "Category", "AuraPlayerState" },
+		{ "ModuleRelativePath", "Public/Player/AuraPlayerState.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_AttributePoints = { "AttributePoints", "OnRep_AttributePoints", (EPropertyFlags)0x0040000100020021, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraPlayerState, AttributePoints), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_AttributePoints_MetaData), Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_AttributePoints_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_SpellPoints_MetaData[] = {
+		{ "Category", "AuraPlayerState" },
+		{ "ModuleRelativePath", "Public/Player/AuraPlayerState.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_SpellPoints = { "SpellPoints", "OnRep_SpellPoints", (EPropertyFlags)0x0040000100020021, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraPlayerState, SpellPoints), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_SpellPoints_MetaData), Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_SpellPoints_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAuraPlayerState_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_LevelUpInfo,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_AbilitySystemComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_AttributeSet,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_Level,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_XP,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_AttributePoints,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAuraPlayerState_Statics::NewProp_SpellPoints,
 	};
 		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AAuraPlayerState_Statics::InterfaceParams[] = {
 			{ Z_Construct_UClass_UAbilitySystemInterface_NoRegister, (int32)VTABLE_OFFSET(AAuraPlayerState, IAbilitySystemInterface), false },  // 3195502011
@@ -252,10 +364,14 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerState() {}
 	{
 		static const FName Name_Level(TEXT("Level"));
 		static const FName Name_XP(TEXT("XP"));
+		static const FName Name_AttributePoints(TEXT("AttributePoints"));
+		static const FName Name_SpellPoints(TEXT("SpellPoints"));
 
 		const bool bIsValid = true
 			&& Name_Level == ClassReps[(int32)ENetFields_Private::Level].Property->GetFName()
-			&& Name_XP == ClassReps[(int32)ENetFields_Private::XP].Property->GetFName();
+			&& Name_XP == ClassReps[(int32)ENetFields_Private::XP].Property->GetFName()
+			&& Name_AttributePoints == ClassReps[(int32)ENetFields_Private::AttributePoints].Property->GetFName()
+			&& Name_SpellPoints == ClassReps[(int32)ENetFields_Private::SpellPoints].Property->GetFName();
 
 		checkf(bIsValid, TEXT("UHT Generated Rep Indices do not match runtime populated Rep Indices for properties in AAuraPlayerState"));
 	}
@@ -266,9 +382,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraPlayerState() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Player_AuraPlayerState_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAuraPlayerState, AAuraPlayerState::StaticClass, TEXT("AAuraPlayerState"), &Z_Registration_Info_UClass_AAuraPlayerState, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAuraPlayerState), 4121542207U) },
+		{ Z_Construct_UClass_AAuraPlayerState, AAuraPlayerState::StaticClass, TEXT("AAuraPlayerState"), &Z_Registration_Info_UClass_AAuraPlayerState, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAuraPlayerState), 4145064899U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Player_AuraPlayerState_h_3693918709(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Player_AuraPlayerState_h_2554688559(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Player_AuraPlayerState_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_Player_AuraPlayerState_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

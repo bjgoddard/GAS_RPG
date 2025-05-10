@@ -12,6 +12,7 @@ class UAbilitySystemComponent;
 class UAuraUserWidget;
 class UOverlayWidgetController;
 struct FWidgetControllerParams;
+class USkillMenuWidgetController;
 /**
  * 
  */
@@ -24,6 +25,8 @@ public:
 	
 	UOverlayWidgetController* GetOverlayWidgetController (const FWidgetControllerParams& WCParams);
 	UAttributeMenuWidgetController* GetAttributeMenuWidgetController (const FWidgetControllerParams& WCParams);
+	USkillMenuWidgetController* GetSkillMenuWidgetController (const FWidgetControllerParams& WCParams);
+
 
 	void InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS);
 	
@@ -47,4 +50,10 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UAttributeMenuWidgetController> AttributeMenuWidgetControllerClass;
+
+	UPROPERTY()
+	TObjectPtr<USkillMenuWidgetController> SkillMenuWidgetController;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<USkillMenuWidgetController> SkillMenuWidgetControllerClass;
 };
