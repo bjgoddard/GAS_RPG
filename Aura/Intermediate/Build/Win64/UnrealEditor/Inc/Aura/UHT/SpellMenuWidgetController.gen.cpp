@@ -83,9 +83,9 @@ void EmptyLinkFunctionForGeneratedCodeSpellMenuWidgetController() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_SpellMenuWidgetController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_USpellMenuWidgetController, USpellMenuWidgetController::StaticClass, TEXT("USpellMenuWidgetController"), &Z_Registration_Info_UClass_USpellMenuWidgetController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USpellMenuWidgetController), 3850643072U) },
+		{ Z_Construct_UClass_USpellMenuWidgetController, USpellMenuWidgetController::StaticClass, TEXT("USpellMenuWidgetController"), &Z_Registration_Info_UClass_USpellMenuWidgetController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USpellMenuWidgetController), 2856997501U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_SpellMenuWidgetController_h_3253391843(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_SpellMenuWidgetController_h_3416833829(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_SpellMenuWidgetController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_UI_WidgetController_SpellMenuWidgetController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

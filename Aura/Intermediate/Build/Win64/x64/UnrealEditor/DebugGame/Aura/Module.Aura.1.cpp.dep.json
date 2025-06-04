@@ -154,12 +154,7 @@
             "c:\\users\\muzik\\documents\\github\\gas_rpg\\aura\\source\\aura\\public\\interaction\\playerinterface.h",
             "c:\\users\\muzik\\documents\\github\\gas_rpg\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\playerinterface.generated.h",
             "c:\\users\\muzik\\documents\\github\\gas_rpg\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auracharacter.generated.h",
-            "c:\\users\\muzik\\documents\\github\\gas_rpg\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auracharacterbase.gen.cpp",
-            "c:\\users\\muzik\\documents\\github\\gas_rpg\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auradamagegameplayability.gen.cpp",
-            "c:\\users\\muzik\\documents\\github\\gas_rpg\\aura\\source\\aura\\public\\abilitysystem\\abilities\\auradamagegameplayability.h",
-            "c:\\users\\muzik\\documents\\github\\gas_rpg\\aura\\source\\aura\\public\\abilitysystem\\abilities\\auragameplayability.h",
-            "c:\\users\\muzik\\documents\\github\\gas_rpg\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auragameplayability.generated.h",
-            "c:\\users\\muzik\\documents\\github\\gas_rpg\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auradamagegameplayability.generated.h"
+            "c:\\users\\muzik\\documents\\github\\gas_rpg\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auracharacterbase.gen.cpp"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

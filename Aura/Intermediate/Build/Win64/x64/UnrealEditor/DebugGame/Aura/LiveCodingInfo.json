@@ -14,10 +14,10 @@
 			"AuraAssetManager.gen.cpp.obj",
 			"AuraAttributeSet.gen.cpp.obj",
 			"AuraCharacter.gen.cpp.obj",
-			"AuraCharacterBase.gen.cpp.obj",
-			"AuraDamageGameplayAbility.gen.cpp.obj"
+			"AuraCharacterBase.gen.cpp.obj"
 		],
 		"Module.Aura.2.cpp.obj": [
+			"AuraDamageGameplayAbility.gen.cpp.obj",
 			"AuraEffectActor.gen.cpp.obj",
 			"AuraEnemy.gen.cpp.obj",
 			"AuraFireBolt.gen.cpp.obj",
@@ -38,11 +38,11 @@
 			"CharacterClassInfo.gen.cpp.obj",
 			"CombatInterface.gen.cpp.obj",
 			"DamageTextComponent.gen.cpp.obj",
-			"EnemyInterface.gen.cpp.obj",
-			"ExecCalc_Damage.gen.cpp.obj",
-			"LevelUpInfo.gen.cpp.obj"
+			"EnemyInterface.gen.cpp.obj"
 		],
 		"Module.Aura.3.cpp.obj": [
+			"ExecCalc_Damage.gen.cpp.obj",
+			"LevelUpInfo.gen.cpp.obj",
 			"MMC_MaxHealth.gen.cpp.obj",
 			"MMC_MaxMana.gen.cpp.obj",
 			"OverlayWidgetController.gen.cpp.obj",

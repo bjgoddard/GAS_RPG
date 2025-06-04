@@ -57,6 +57,10 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraAbilityInfo>()
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_CooldownTag;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AbilityType_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_AbilityType;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Icon_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_Icon;
@@ -114,6 +118,13 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraAbilityInfo>()
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_CooldownTag = { "CooldownTag", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FAuraAbilityInfo, CooldownTag), Z_Construct_UScriptStruct_FGameplayTag, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_CooldownTag_MetaData), Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_CooldownTag_MetaData) }; // 2083603574
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_AbilityType_MetaData[] = {
+		{ "Category", "AuraAbilityInfo" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/Data/AbilityInfo.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_AbilityType = { "AbilityType", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FAuraAbilityInfo, AbilityType), Z_Construct_UScriptStruct_FGameplayTag, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_AbilityType_MetaData), Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_AbilityType_MetaData) }; // 2083603574
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_Icon_MetaData[] = {
 		{ "Category", "AuraAbilityInfo" },
 		{ "ModuleRelativePath", "Public/AbilitySystem/Data/AbilityInfo.h" },
@@ -147,6 +158,7 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraAbilityInfo>()
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_InputTag,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_StatusTag,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_CooldownTag,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_AbilityType,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_Icon,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_BackgroundMaterial,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewProp_LevelRequirement,
@@ -211,14 +223,14 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraAbilityInfo>()
 		{ "ModuleRelativePath", "Public/AbilitySystem/Data/AbilityInfo.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UAbilityInfo_Statics::NewProp_AbilityInformation_Inner = { "AbilityInformation", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FAuraAbilityInfo, METADATA_PARAMS(0, nullptr) }; // 3343636261
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UAbilityInfo_Statics::NewProp_AbilityInformation_Inner = { "AbilityInformation", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FAuraAbilityInfo, METADATA_PARAMS(0, nullptr) }; // 1078456819
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAbilityInfo_Statics::NewProp_AbilityInformation_MetaData[] = {
 		{ "Category", "AbilityInformation" },
 		{ "ModuleRelativePath", "Public/AbilitySystem/Data/AbilityInfo.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UAbilityInfo_Statics::NewProp_AbilityInformation = { "AbilityInformation", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAbilityInfo, AbilityInformation), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UAbilityInfo_Statics::NewProp_AbilityInformation_MetaData), Z_Construct_UClass_UAbilityInfo_Statics::NewProp_AbilityInformation_MetaData) }; // 3343636261
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UAbilityInfo_Statics::NewProp_AbilityInformation = { "AbilityInformation", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAbilityInfo, AbilityInformation), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UAbilityInfo_Statics::NewProp_AbilityInformation_MetaData), Z_Construct_UClass_UAbilityInfo_Statics::NewProp_AbilityInformation_MetaData) }; // 1078456819
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UAbilityInfo_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAbilityInfo_Statics::NewProp_AbilityInformation_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAbilityInfo_Statics::NewProp_AbilityInformation,
@@ -263,12 +275,12 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraAbilityInfo>()
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Data_AbilityInfo_h_Statics::ScriptStructInfo[] = {
-		{ FAuraAbilityInfo::StaticStruct, Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewStructOps, TEXT("AuraAbilityInfo"), &Z_Registration_Info_UScriptStruct_AuraAbilityInfo, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FAuraAbilityInfo), 3343636261U) },
+		{ FAuraAbilityInfo::StaticStruct, Z_Construct_UScriptStruct_FAuraAbilityInfo_Statics::NewStructOps, TEXT("AuraAbilityInfo"), &Z_Registration_Info_UScriptStruct_AuraAbilityInfo, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FAuraAbilityInfo), 1078456819U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Data_AbilityInfo_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UAbilityInfo, UAbilityInfo::StaticClass, TEXT("UAbilityInfo"), &Z_Registration_Info_UClass_UAbilityInfo, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAbilityInfo), 3368330621U) },
+		{ Z_Construct_UClass_UAbilityInfo, UAbilityInfo::StaticClass, TEXT("UAbilityInfo"), &Z_Registration_Info_UClass_UAbilityInfo, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAbilityInfo), 2689532995U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Data_AbilityInfo_h_599228005(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Data_AbilityInfo_h_3417650329(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Data_AbilityInfo_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Data_AbilityInfo_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Data_AbilityInfo_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_muzik_Documents_GitHub_GAS_RPG_Aura_Source_Aura_Public_AbilitySystem_Data_AbilityInfo_h_Statics::ScriptStructInfo),
 		nullptr, 0);

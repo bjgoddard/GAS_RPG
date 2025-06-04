@@ -222,17 +222,17 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	);
 	
 	GameplayTags.Abilities_Type_None = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("Abilities.Status.None"),
+	FName("Abilities.Type.None"),
 	FString("Type None")
 	);	
 
 	GameplayTags.Abilities_Type_Offensive = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("Abilities.Status.Offensive"),
+	FName("Abilities.Type.Offensive"),
 	FString("Type Offensive")
 	);
 
 	GameplayTags.Abilities_Type_Passive = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("Abilities.Status.Passive"),
+	FName("Abilities.Type.Passive"),
 	FString("Type Passive")
 	);		
 	
